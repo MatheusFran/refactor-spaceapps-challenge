@@ -17,10 +17,7 @@ async def query_agent(payload: QueryInput):
         result = graph.invoke(state)
 
         return {
-            "summary": result["messages"][-1].content,
-            "articles": [],
-            "files": [],
-            "graphs": [],
+            "response": result["messages"][-1].content,
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
