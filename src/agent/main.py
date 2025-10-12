@@ -1,4 +1,6 @@
+import os
 from typing import Literal
+
 from pydantic import BaseModel, Field
 from langchain.chat_models import init_chat_model
 from langgraph.graph import StateGraph, START, END, MessagesState
@@ -7,8 +9,18 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from src.agent.prompts import GRADE_PROMPT, REWRITE_PROMPT, GENERATE_PROMPT
 from src.agent.tool import retriever_tool
 
-model = init_chat_model("mistralai/Mistral-7B-Instruct-v0.2", temperature=0.2)
+from dotenv import load_dotenv
 
+load_dotenv()
+
+
+# model = init_chat_model("mistralai/Mistral-7B-Instruct-v0.2", temperature=0.2)
+model = init_chat_model(
+    "gemini-2.5-flash",
+    model_provider="google_genai",
+    api_key=os.getenv("GOOGLE_API_KEY"),
+    temperature=0.2
+)
 
 class GradeDocuments(BaseModel):
     binary_score: str = Field(
