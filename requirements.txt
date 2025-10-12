@@ -1,0 +1,16 @@
+fastapi~=0.119.0
+pydantic~=2.11.9
+streamlit~=1.50.0
+requests~=2.32.5
+pandas~=2.3.3
+plotly~=6.3.1
+langchain~=0.3.27
+langgraph~=0.6.10
+dotenv~=0.9.9
+python-dotenv~=1.1.1
+langchain-community~=0.3.31
+docling~=2.55.1
+langchain-core~=0.3.79
+langchain-text-splitters~=0.3.11
+uvicorn
+transformers
