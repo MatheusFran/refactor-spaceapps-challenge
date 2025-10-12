@@ -7,7 +7,7 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from src.agent.prompts import GRADE_PROMPT, REWRITE_PROMPT, GENERATE_PROMPT
 from src.agent.tool import retriever_tool
 
-model = init_chat_model("mistralai/Mistral-7B-Instruct-v0.2", model_provider="huggingface")
+model = init_chat_model("mistralai/Mistral-7B-Instruct-v0.2", temperature=0.2)
 
 
 class GradeDocuments(BaseModel):
