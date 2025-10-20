@@ -7,12 +7,6 @@ from langchain_community.vectorstores import FAISS
 from langchain.docstore.document import Document
 
 
-#  Salvar no Mongo:
-# {
-#   "chunk_text": "...",
-#   "embedding": [...],
-#   "metadata": {"section": "Introdução", "file": "guia.md"}
-# }
 
 def split_documents(doc):
     headers_to_split_on = [
